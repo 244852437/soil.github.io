@@ -35,3 +35,10 @@ document.querySelectorAll('.tree details summary').forEach(function (summary) {
         });
     });
 });
+// JavaScript function to scroll to the target element
+function scrollToTarget(targetId) {
+    var targetElement = document.getElementById(targetId);
+    if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest", offset: 50 });
+    }
+}
