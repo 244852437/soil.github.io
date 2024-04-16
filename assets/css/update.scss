@@ -1,0 +1,53 @@
+@import url(main.css);
+
+// 导航
+.nav {
+    background-color: black;
+}
+
+// 更新 
+.update {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+    background-color: #EBEBEB;
+
+    .version-list,
+    .old-version-list {
+        width: 900px;
+
+        .title {
+            font-size: 24px;
+        }
+
+        .sub-title {
+            font-size: 20px;
+        }
+
+        .update-platform {
+            font-size: 18px;
+            margin: 16px 0;
+
+            .update-time {
+                margin-left: 16px;
+            }
+        }
+    }
+}
+
+// 页脚
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    border-top: 1px solid rgb(237, 237, 237);
+
+    .copy,
+    .studio {
+        color: gray;
+    }
+}

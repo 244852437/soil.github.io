@@ -1,0 +1,298 @@
+@import url(main.css);
+
+@keyframes title {
+    0% {
+        opacity: 0;
+        top: 100px;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0px;
+        pointer-events: visible;
+    }
+}
+
+@keyframes product {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes software-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes software-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes download-item {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+// 主页样式
+.index {
+    width: 100%;
+    height: auto;
+
+    // 背景
+    .background {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        background: url("../imgs/background.jpg") no-repeat center;
+        background-size: cover;
+
+        .title,
+        .sub-title,
+        .download-link {
+            position: relative;
+            top: 0;
+            margin: 16px 0;
+            color: white;
+            letter-spacing: 24px;
+            font-size: 32px;
+            opacity: 0;
+            pointer-events: none;
+            animation: title 0.8s;
+            animation-fill-mode: forwards;
+        }
+
+        .sub-title {
+            animation-delay: 0.8s;
+        }
+
+        .download-link {
+            animation-delay: 1.6s;
+
+            &::after,
+            &::before {
+                display: inline-block;
+                content: '';
+                position: absolute;
+                width: 32px;
+                height: 16px;
+            }
+
+            &::after {
+                top: -4px;
+                left: -12px;
+                border-top: 2px solid white;
+                border-left: 2px solid white;
+            }
+
+            &::before {
+                bottom: -8px;
+                right: 12px;
+                border-bottom: 2px solid white;
+                border-right: 2px solid white;
+            }
+
+            &:hover {
+                opacity: 0.5 !important;
+            }
+        }
+    }
+
+    // 介绍
+    .introduce {
+        width: 100%;
+        height: auto;
+
+        .product {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: 380px;
+
+            .product-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 128px;
+                }
+
+                .title {
+                    font-size: 24px;
+                }
+
+                .sub-title {
+                    color: gray;
+                }
+            }
+
+            .product-animation {
+                animation: product 2s;
+            }
+        }
+    }
+
+    // 软件介绍
+    .software {
+        display: flex;
+        flex-direction: column;
+
+        .software-item {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 32px 0;
+
+            img {
+                width: 600px;
+            }
+
+            &.sociality,
+            &.security {
+                background-color: #F5F5F5;
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-width: 600px;
+
+                .title {
+                    font-size: 32px;
+                }
+
+                .sub-title {
+                    color: gray;
+                }
+            }
+        }
+
+        .software-item-left {
+            animation: software-left 2s;
+        }
+
+        .software-item-right {
+            animation: software-right 2s;
+        }
+    }
+
+    // 软件下载
+    .download {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-height: 300px;
+        padding-bottom: 32px;
+
+        .title {
+            font-size: 32px;
+        }
+
+        .download-software {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .download-platform {
+                display: flex;
+
+                .download-item {
+                    display: flex;
+                    margin: 0 48px;
+
+                    a {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        color: gray;
+                        padding: 8px 24px;
+                        transition: all 0.5s;
+
+                        svg {
+                            margin-bottom: 24px;
+                        }
+
+                        svg path {
+                            transition: all 0.5s;
+                        }
+
+                        p {
+                            margin: 8px 0 0 0;
+                        }
+                    }
+
+                    a:hover {
+                        svg path {
+                            fill: rgb(0, 162, 255);
+                        }
+
+                        background-color: #F0F9FF;
+                        color:rgb(0, 162, 255);
+                    }
+                }
+            }
+        }
+
+        .download-animation {
+            animation: download-item 2s;
+        }
+
+        svg {
+            width: 100px;
+            height: 100px;
+
+            path {
+                fill: #999999;
+            }
+        }
+    }
+
+    // 页脚
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 200px;
+        border-top: 1px solid rgb(237, 237, 237);
+
+        .copy,
+        .studio {
+            color: gray;
+        }
+    }
+}
